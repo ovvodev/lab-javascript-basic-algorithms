@@ -57,13 +57,31 @@ let countEt = 0;
 
 for (let i = 0; i < words.length; i++){
     if (words[i] === wordEt) {
-        countEt++
+        countEt++ 
     }
 }
  console.log(countEt);
 
  // Bonus 2
 
- const phraseToCheck = "Was it a car or a cat I saw?";
- 
- 
+ const phraseToCheck = "Was it a car or a cat I saw";
+ let cleanPhrase = "";
+ let reversePhrase = "";
+
+ for (let i = 0; i < phraseToCheck.length; i++) {
+    const char = phraseToCheck[i];
+    cleanPhrase += char.toLowerCase().trim();
+  }
+
+  for (let i = cleanPhrase.length - 1;i >= 0; i--){
+    reversePhrase += cleanPhrase[i];
+  }
+
+  console.log(cleanPhrase, reversePhrase);
+
+  if (cleanPhrase === reversePhrase){
+    console.log(true);
+  }else{
+    console.log(false);
+  }
+
